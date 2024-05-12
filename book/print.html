@@ -1,0 +1,1218 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js mocha">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Oxygen-U Documentation</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="./theme/catppuccin.css">
+        <link rel="stylesheet" href="./theme/catppuccin-highlight.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('mocha')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item expanded "><a href="GettingStarted/GettingStarted.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="GettingStarted/DownloadingOxy.html"><strong aria-hidden="true">2.1.</strong> Downloading Oxygen-U</a></li><li class="chapter-item expanded "><a href="GettingStarted/GettingKey.html"><strong aria-hidden="true">2.2.</strong> Getting A Key</a></li><li class="chapter-item expanded "><a href="GettingStarted/UserInterface.html"><strong aria-hidden="true">2.3.</strong> User Interface</a></li></ol></li><li class="chapter-item expanded "><a href="APIRef.html"><strong aria-hidden="true">3.</strong> API Reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="API/EnvironmentFunc.html"><strong aria-hidden="true">3.1.</strong> Environment Functions</a></li><li class="chapter-item expanded "><a href="API/ScriptFunc.html"><strong aria-hidden="true">3.2.</strong> Script Functions</a></li><li class="chapter-item expanded "><a href="API/TableFunc.html"><strong aria-hidden="true">3.3.</strong> Table Functions</a></li><li class="chapter-item expanded "><a href="API/InputFunc.html"><strong aria-hidden="true">3.4.</strong> Input Functions</a></li><li class="chapter-item expanded "><a href="API/HookingFunc.html"><strong aria-hidden="true">3.5.</strong> Hooking Functions</a></li><li class="chapter-item expanded "><a href="API/ReflecFunc.html"><strong aria-hidden="true">3.6.</strong> Reflection Functions</a></li><li class="chapter-item expanded "><a href="API/ConsoleFunc.html"><strong aria-hidden="true">3.7.</strong> Console Functions</a></li><li class="chapter-item expanded "><a href="API/FileSysFunc.html"><strong aria-hidden="true">3.8.</strong> Filesystem Functions</a></li><li class="chapter-item expanded "><a href="API/MiscFunc.html"><strong aria-hidden="true">3.9.</strong> Miscellaneous Functions</a></li></ol></li><li class="chapter-item expanded "><a href="LibraryRef.html"><strong aria-hidden="true">4.</strong> Libraries</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Libraries/BitLib.html"><strong aria-hidden="true">4.1.</strong> Bit32 Library</a></li><li class="chapter-item expanded "><a href="Libraries/CryptLib.html"><strong aria-hidden="true">4.2.</strong> Crypt Library</a></li><li class="chapter-item expanded "><a href="Libraries/DebugLib.html"><strong aria-hidden="true">4.3.</strong> Debug Library</a></li><li class="chapter-item expanded "><a href="Libraries/DrawingLib.html"><strong aria-hidden="true">4.4.</strong> Drawing Library</a></li></ol></li><li class="chapter-item expanded "><a href="Credits.html"><strong aria-hidden="true">5.</strong> Credits</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha (default)</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Oxygen-U Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<h2 id="welcome-to-the-oxygen-u-documentation"><a class="header" href="#welcome-to-the-oxygen-u-documentation">Welcome to the Oxygen-U Documentation!</a></h2>
+<ul>
+<li>This documentation was written by bruvzz (Ducky).</li>
+</ul>
+<p align="center">
+    <img src="https://i.imgur.com/yNz0wKL.png">
+</p>
+<pre><code>                ~~ Change your theme by pressing the paintbrush above! ~~</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h1>
+<p>Hey there! Welcome to Oxygen-U!</p>
+<p>Let's get you started with checking or installing some dependencies Oxygen-U requires to run properly:</p>
+<h2 id="requirements"><a class="header" href="#requirements">Requirements:</a></h2>
+<ol>
+<li>
+<p><strong>x64 Bit Installation of Windows 10 / 11:</strong></p>
+<ul>
+<li><a href="https://www.microsoft.com/en-us/software-download/windows10">https://www.microsoft.com/en-us/software-download/windows10</a></li>
+</ul>
+</li>
+<li>
+<p><strong>VC_Redist x64:</strong></p>
+<ul>
+<li><a href="https://aka.ms/vs/16/release/vc_redist.x64.exe">https://aka.ms/vs/16/release/vc_redist.x64.exe</a></li>
+</ul>
+</li>
+<li>
+<p><strong>VC_Redist x86:</strong></p>
+<ul>
+<li><a href="https://aka.ms/vs/16/release/vc_redist.x86.exe">https://aka.ms/vs/16/release/vc_redist.x86.exe</a></li>
+</ul>
+</li>
+<li>
+<p><strong>.NET Framework 4.7.2 or above:</strong></p>
+<ul>
+<li><a href="https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net472-web-installer">https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net472-web-installer</a></li>
+</ul>
+</li>
+<li>
+<p><strong>WebView2:</strong></p>
+<ul>
+<li><a href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/">https://developer.microsoft.com/en-us/microsoft-edge/webview2/</a></li>
+</ul>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="downloading-oxygen-u"><a class="header" href="#downloading-oxygen-u">Downloading Oxygen-U</a></h1>
+<p>There are 2 official sources to download Oxygen-U from.</p>
+<ul>
+<li><a href="https://oxygenu.xyz">oxygenu.xyz</a></li>
+<li><a href="https://wearedevs.net/d/Oxygen%20U">WeAreDevs</a></li>
+</ul>
+<hr />
+<h2 id="downloading-from-oxygenuxyz"><a class="header" href="#downloading-from-oxygenuxyz">Downloading from oxygenu.xyz:</a></h2>
+<ol>
+<li>
+<p>Go to oxygenu.xyz (if you aren't already).</p>
+</li>
+<li>
+<p>Click <code>Download</code> on the top right of the front page.</p>
+<ul>
+<li>If your browser is preventing from downloading Oxygen-U, press <code>Ctrl + J</code> and click <code>Keep Dangerous File</code>.</li>
+</ul>
+</li>
+<li>
+<p>Create a new folder on your Desktop.</p>
+<ul>
+<li><code>Right Click</code> &gt; <code>New</code> &gt; <code>New Folder</code>.</li>
+</ul>
+</li>
+<li>
+<p>Drag and extract Oxygen-U into the folder you just created.</p>
+</li>
+</ol>
+<hr />
+<h2 id="downloading-from-wearedevs"><a class="header" href="#downloading-from-wearedevs">Downloading from WeAreDevs:</a></h2>
+<ol>
+<li>
+<p>Go to <a href="https://wearedevs.net/d/Oxygen%20U">https://wearedevs.net/d/Oxygen%20U</a>.</p>
+</li>
+<li>
+<p>Click the button that says "For Microsoft Store edition".</p>
+</li>
+<li>
+<p>The process should now download.</p>
+<ul>
+<li>If your browser is preventing from downloading Oxygen-U, press <code>Ctrl + J</code> and click <code>Keep Dangerous File</code>.</li>
+</ul>
+</li>
+<li>
+<p>Create a new folder on your Desktop.</p>
+<ul>
+<li><code>Right Click</code> &gt; <code>New</code> &gt; <code>New Folder</code>.</li>
+</ul>
+</li>
+<li>
+<p>Drag and extract Oxygen-U into the folder you just created.</p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-a-key"><a class="header" href="#getting-a-key">Getting a Key</a></h1>
+<ul>
+<li>Here is how to get a key with Oxygen-U:</li>
+</ul>
+<hr />
+<h2 id="how-to-get-a-key"><a class="header" href="#how-to-get-a-key">How to Get A Key:</a></h2>
+<p>When you first open Oxygen-U, you will be brought up with a small box.</p>
+<ul>
+<li>
+<p>Inside of the box, you should have these 3 things:</p>
+<ul>
+<li>
+<p>The TextBox (<code>"Key Here"</code>)</p>
+</li>
+<li>
+<p>Continue Button</p>
+</li>
+<li>
+<p>Get Key Button</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click the <code>Get Key</code> button.</p>
+</li>
+<li>
+<p>Once you have clicked the <code>Get Key</code> button, you will then go through a couple of Linkvertises.</p>
+<ul>
+<li>
+<p>This is to help monitize Oxygen-U.</p>
+</li>
+<li>
+<p>Make sure you are going through <code>Free Access</code> when doing this process.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Once you have finished, you will then be brought to the key screen.</p>
+<ul>
+<li>
+<p>Copy your key, then do <code>Ctrl + A</code> in the textbox inside Oxygen-U.</p>
+</li>
+<li>
+<p>Delete the text that's already inside of the textbox.</p>
+</li>
+<li>
+<p>Paste your key then click <code>Continue</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Congratulations! You should now be authenticated and the user-interface should now be in front of you.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="user-interface"><a class="header" href="#user-interface">User Interface</a></h1>
+<ul>
+<li>This is the current user-interface of Oxygen-U.</li>
+</ul>
+<p align="center">
+    <img src="https://i.imgur.com/0zZepgz.png">
+</p>
+<hr />
+<h2 id="labeling-the-user-interface"><a class="header" href="#labeling-the-user-interface">Labeling the User Interface:</a></h2>
+<p align="center">
+    <img src="https://i.imgur.com/mJa6ylL.png">
+</p>
+<ol>
+<li>
+<p>Search</p>
+<ul>
+<li>This is where you put your own scripts. Basically, your script box.</li>
+</ul>
+</li>
+<li>
+<p>Home</p>
+<ul>
+<li>The Home button is where you can see everything like you are now.</li>
+</ul>
+</li>
+<li>
+<p>Script Hub</p>
+<ul>
+<li>This is the Script Hub button. You can find scripts here by searching for the title!</li>
+<li>Integrated with <a href="https://scriptblox.com">scriptblox.com</a> API.</li>
+</ul>
+</li>
+<li>
+<p>Settings</p>
+<ul>
+<li>This is where you can control your Oxygen-U with some very simple settings.</li>
+</ul>
+</li>
+<li>
+<p>Script Editor</p>
+<ul>
+<li>This is where you can place your code to execute in-game after your injection process.</li>
+</ul>
+</li>
+<li>
+<p>Tab</p>
+<ul>
+<li>Tabs are used to have many other script editors inside your user interface. More coding!</li>
+</ul>
+</li>
+<li>
+<p>Execute</p>
+<ul>
+<li>This is the button you press to execute your scripts.</li>
+</ul>
+</li>
+<li>
+<p>Inject</p>
+<ul>
+<li>This is the button to begin the injection process into the game.</li>
+</ul>
+</li>
+<li>
+<p>Clear Editor</p>
+<ul>
+<li>This is the button that will clear any text that is inside the designated tab you are in.</li>
+</ul>
+</li>
+<li>
+<p>Open File</p>
+<ul>
+<li>This is the button to open any <code>.txt</code> and/or <code>.lua</code> format files.</li>
+</ul>
+</li>
+<li>
+<p>Save File</p>
+<ul>
+<li>This is the button to save any code that is inside your script editor.</li>
+</ul>
+</li>
+<li>
+<p>Console</p>
+<ul>
+<li>This is the console! This is where you can all the action happen. Downloading the dll, injection finishing, and more!</li>
+</ul>
+</li>
+<li>
+<p>Power Button</p>
+<ul>
+<li>This is the button to close Oxygen-U.</li>
+</ul>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h1>
+<p>Welcome to the reference page for Oxygen-U.</p>
+<ul>
+<li>
+<p>Here, you will be able to see all of the supported functions Oxygen-U has in store.</p>
+</li>
+<li>
+<p>Before we start, here are some generics you should probably know when reading a function:</p>
+<ul>
+<li>
+<p><code>union&lt;T, X&gt;</code> refers to functions that can return more then 1 type for that specific argument/return value.</p>
+</li>
+<li>
+<p><code>?</code> refers to optional parameters. Example: <code>&lt;bool?&gt;</code></p>
+</li>
+<li>
+<p><code>&lt;void&gt;</code> refers to functions with no return results (as in other languages)</p>
+</li>
+<li>
+<p><code>variant</code> refers to parameters/return values that could be any type.</p>
+</li>
+<li>
+<p><code>...</code> refers to variable amounts of parameters/return values.</p>
+</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="environment-functions"><a class="header" href="#environment-functions">Environment Functions</a></h1>
+<h2 id="get-global-environment"><a class="header" href="#get-global-environment">Get Global Environment:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; getgenv(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Returns the <code>environment</code> that will be applied to each script ran by Oxygen-U.</li>
+</ul>
+<h2 id="get-roblox-environment"><a class="header" href="#get-roblox-environment">Get Roblox Environment:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; getrenv(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Returns the Roblox <code>environment</code>.</li>
+</ul>
+<h2 id="get-registry"><a class="header" href="#get-registry">Get Registry:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; getreg(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Returns the <code>Lua</code> registry.</li>
+</ul>
+<h2 id="get-garbage-collection"><a class="header" href="#get-garbage-collection">Get Garbage Collection:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; getgc(&lt;bool?&gt;)
+</code></pre>
+<ul>
+<li>Returns a <code>table</code> with all <code>gc</code> objects. Use <code>getgc(true)</code> to include tables.</li>
+</ul>
+<h2 id="get-instances"><a class="header" href="#get-instances">Get Instances:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; getinstances(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Returns a <code>table</code> with instances.</li>
+</ul>
+<h2 id="get-nil-instances"><a class="header" href="#get-nil-instances">Get Nil Instances:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; getnilinstances(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Returns a <code>table</code> with instances parented to <code>nil</code>.</li>
+</ul>
+<h2 id="get-loaded-modules"><a class="header" href="#get-loaded-modules">Get Loaded Modules:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; getloadedmodules(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Returns a <code>table</code> with all loaded <code>modules</code> currently in game.</li>
+</ul>
+<h2 id="get-connections"><a class="header" href="#get-connections">Get Connections:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; getconnections(&lt;RBXScriptSignal&gt; Signal)
+</code></pre>
+<ul>
+<li>Returns a <code>table</code> with all connections to the given <code>signal</code>.</li>
+</ul>
+<h3 id="connections"><a class="header" href="#connections">Connections:</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Connection</th><th style="text-align: center">Description</th></tr></thead><tbody>
+<tr><td style="text-align: center">.Function</td><td style="text-align: center">The function connected to the connection.</td></tr>
+<tr><td style="text-align: center">:Enable</td><td style="text-align: center">Enables the connection.</td></tr>
+<tr><td style="text-align: center">:Disable</td><td style="text-align: center">Disables the connection.</td></tr>
+<tr><td style="text-align: center">:Fire</td><td style="text-align: center">Fires the connection.</td></tr>
+</tbody></table>
+</div>
+<h2 id="fire-signal"><a class="header" href="#fire-signal">Fire Signal:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; firesignal(&lt;RBXScriptSignal&gt; Signal, &lt;variant?&gt; Args...)
+</code></pre>
+<ul>
+<li>Fires all signals connected to the <code>signal</code>. If given, the arguments will be used to call the function.</li>
+</ul>
+<h2 id="fire-click-detector"><a class="header" href="#fire-click-detector">Fire Click Detector:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; fireclickdetector(&lt;Instance&gt; ClickDetector, &lt;number?&gt; Distance = 0, &lt;string?&gt;)
+</code></pre>
+<ul>
+<li>Fires the <code>clickdetector</code>. If no distance supplied, it will default to <code>0</code>.</li>
+</ul>
+<h2 id="fire-proximity-prompt"><a class="header" href="#fire-proximity-prompt">Fire Proximity Prompt:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; fireproximityprompt(&lt;ProximityPrompt&gt; Prompt)
+</code></pre>
+<ul>
+<li>Fires the <code>proximityprompt</code> trigger.</li>
+</ul>
+<h2 id="fire-touch-interest"><a class="header" href="#fire-touch-interest">Fire Touch Interest:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; firetouchinterest(&lt;BasePart&gt; totouch, &lt;BasePart&gt; Part, &lt;uint?&gt; toggle)
+</code></pre>
+<ul>
+<li>Touches part with <code>totouch</code>.</li>
+</ul>
+<h3 id="actions"><a class="header" href="#actions">Actions:</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Action</th><th style="text-align: center">Toggle</th></tr></thead><tbody>
+<tr><td style="text-align: center">Begins the touch.</td><td style="text-align: center">0</td></tr>
+<tr><td style="text-align: center">Ends the touch.</td><td style="text-align: center">1</td></tr>
+</tbody></table>
+</div>
+<h2 id="set-scriptable"><a class="header" href="#set-scriptable">Set Scriptable:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; setscriptable(&lt;Instance&gt; Object, &lt;string&gt; Property, &lt;bool&gt; toggle)
+</code></pre>
+<ul>
+<li>Sets the property's scriptable state to <code>toggle</code>.</li>
+</ul>
+<h2 id="get-hidden-property"><a class="header" href="#get-hidden-property">Get Hidden Property:</a></h2>
+<pre><code class="language-lua">&lt;variant&gt; gethiddenproperty(&lt;Instance&gt; Object, &lt;string&gt; Property)
+</code></pre>
+<ul>
+<li>Returns the <code>value</code> of the property that cannot be accessed through Lua.</li>
+</ul>
+<h2 id="set-hidden-property"><a class="header" href="#set-hidden-property">Set Hidden Property:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; sethiddenproperty(&lt;Instance&gt; Object, &lt;string&gt; Property, &lt;variant&gt; Value)
+</code></pre>
+<ul>
+<li>Sets the given property to new <code>value</code>.</li>
+</ul>
+<h2 id="set-simulation-radius"><a class="header" href="#set-simulation-radius">Set Simulation Radius:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; setsimulationradius(&lt;int&gt; Radius)
+</code></pre>
+<ul>
+<li>Sets the <code>LocalPlayer</code>'s simulation radius to given <code>arg</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="script-functions"><a class="header" href="#script-functions">Script Functions</a></h1>
+<h2 id="get-script-environment"><a class="header" href="#get-script-environment">Get Script Environment:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; getsenv(&lt;LocalScript, ModuleScript&gt; Script)
+</code></pre>
+<ul>
+<li>Returns the global environment of the given script.</li>
+</ul>
+<h2 id="get-calling-script"><a class="header" href="#get-calling-script">Get Calling Script:</a></h2>
+<pre><code class="language-lua">&lt;Instance&gt; getcallingscript(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Gets the script that is calling this function.</li>
+</ul>
+<h2 id="get-script-closure"><a class="header" href="#get-script-closure">Get Script Closure:</a></h2>
+<pre><code class="language-lua">&lt;function&gt; getscriptclosure(&lt;Instance&gt; Script)
+</code></pre>
+<ul>
+<li>Returns the closure from the given script, can be used to gather <code>upvalues</code> or <code>constants</code>.</li>
+</ul>
+<h2 id="get-script-hash"><a class="header" href="#get-script-hash">Get Script Hash:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; getscripthash(&lt;Instance&gt; Script)
+</code></pre>
+<ul>
+<li>Returns a SHA384 hash of the scripts bytecode. You can use this to detect changes of a script.</li>
+</ul>
+<h2 id="get-script-bytecode"><a class="header" href="#get-script-bytecode">Get Script Bytecode:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; getscriptbytecode(&lt;Instance&gt; Script)
+</code></pre>
+<ul>
+<li>Returns the bytecode of the given script. This can be used in a dissassembler.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="table-functions"><a class="header" href="#table-functions">Table Functions</a></h1>
+<h2 id="get-raw-metatable"><a class="header" href="#get-raw-metatable">Get Raw Metatable:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; getrawmetatable(&lt;table&gt; a1)  
+</code></pre>
+<ul>
+<li>Returns the <code>__metatable</code> of <code>a1</code>.</li>
+</ul>
+<h2 id="set-raw-metatable"><a class="header" href="#set-raw-metatable">Set Raw Metatable:</a></h2>
+<pre><code class="language-lua">&lt;bool&gt; setrawmetatable(&lt;table&gt; a1, &lt;table&gt; a2)
+</code></pre>
+<ul>
+<li>Sets the <code>__metatable</code> of <code>a1</code> to <code>a2</code>.</li>
+</ul>
+<h2 id="set-read-only"><a class="header" href="#set-read-only">Set Read Only:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; setreadonly(&lt;table&gt; a1, &lt;bool&gt; a2)  
+</code></pre>
+<ul>
+<li>Sets the read-only value of <code>a1</code> to <code>a2</code>.</li>
+</ul>
+<h2 id="is-read-only"><a class="header" href="#is-read-only">Is Read Only:</a></h2>
+<pre><code class="language-lua">&lt;bool&gt; isreadonly(&lt;table&gt; a1)  
+</code></pre>
+<ul>
+<li>Returns if <code>a1</code> is read-only.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="input-functions"><a class="header" href="#input-functions">Input Functions</a></h1>
+<h2 id="is-active"><a class="header" href="#is-active">Is Active:</a></h2>
+<pre><code class="language-lua">&lt;bool&gt; iswindowactive(&lt;void&gt;)  
+</code></pre>
+<ul>
+<li>Returns if the window is focused.</li>
+</ul>
+<h2 id="keyboard"><a class="header" href="#keyboard">Keyboard:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; keypress(&lt;uint&gt; keycode)  
+</code></pre>
+<ul>
+<li>Simulates a key press for the specified keycode. You can find a list of codes <a href="https://docs.microsoft.com/en-us/windows/desktop/inputdev/virtual-key-codes">here</a>.</li>
+</ul>
+<pre><code class="language-lua">&lt;void&gt; keyrelease(&lt;uint&gt; key)  
+</code></pre>
+<ul>
+<li>Releases <code>key</code> on the keyboard.</li>
+</ul>
+<h2 id="left-click"><a class="header" href="#left-click">Left Click:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; mouse1click(&lt;void&gt;)  
+</code></pre>
+<ul>
+<li>Simulates a full left mouse button press.</li>
+</ul>
+<pre><code class="language-lua">&lt;void&gt; mouse1press(&lt;void&gt;)  
+</code></pre>
+<ul>
+<li>Simulates a left mouse button press without releasing it.</li>
+</ul>
+<pre><code class="language-lua">&lt;void&gt; mouse1release(&lt;void&gt;)  
+</code></pre>
+<ul>
+<li>Simulates a left mouse button release.</li>
+</ul>
+<h2 id="right-click"><a class="header" href="#right-click">Right Click:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; mouse2click(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Simulates a full right mouse button press.</li>
+</ul>
+<pre><code class="language-lua">&lt;void&gt; mouse2press(&lt;void&gt;)  
+</code></pre>
+<ul>
+<li>Clicks down on the right mouse button.</li>
+</ul>
+<pre><code class="language-lua">&lt;void&gt; mouse2release(&lt;void&gt;)  
+</code></pre>
+<ul>
+<li>Simulates a right mouse button release.</li>
+</ul>
+<h2 id="mouse-movement"><a class="header" href="#mouse-movement">Mouse Movement:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; mousescroll(&lt;number&gt; number)  
+</code></pre>
+<ul>
+<li>Scrolls the mouse wheel virtually by <code>number</code> pixels.</li>
+</ul>
+<pre><code class="language-lua">&lt;void&gt; mousemoverel(&lt;number&gt; a1, &lt;number&gt; a2)  
+</code></pre>
+<ul>
+<li>Moves the mouse cursor relatively to the current mouse position by coordinates <code>a1</code> and <code>a2</code>.</li>
+</ul>
+<pre><code class="language-lua">&lt;void&gt; mousemoveabs(&lt;number&gt; a1, &lt;number&gt; a2)  
+</code></pre>
+<ul>
+<li>Move's your mouse to the <code>a1</code> and <code>a2</code> coordinates in pixels from top left of the window.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hooking-functions"><a class="header" href="#hooking-functions">Hooking Functions</a></h1>
+<h2 id="hook-function"><a class="header" href="#hook-function">Hook Function:</a></h2>
+<pre><code class="language-lua">&lt;function&gt; hookfunction(&lt;function&gt; old, &lt;function&gt; new)  
+</code></pre>
+<ul>
+<li>Hooks function <code>old</code>, replacing it with the function <code>new</code>. The <code>old</code> function is returned, you <em>must</em> use this function in order to call the original function.</li>
+</ul>
+<h2 id="hook-metamethod"><a class="header" href="#hook-metamethod">Hook Metamethod:</a></h2>
+<pre><code class="language-lua">&lt;function&gt; hookmetamethod(&lt;Object&gt; object, &lt;string&gt; metamethod, &lt;function&gt; a1)  
+</code></pre>
+<ul>
+<li>Hooks the <code>metamethod</code> passed in <code>object</code>'s metatable with <code>a1</code>.</li>
+</ul>
+<h2 id="new-c-closure"><a class="header" href="#new-c-closure">New C Closure:</a></h2>
+<pre><code class="language-lua">&lt;function&gt; newcclosure(&lt;function&gt; a1)  
+</code></pre>
+<ul>
+<li>Pushes a new CClosure that invokes the function <code>a1</code> upon call.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reflection-functions"><a class="header" href="#reflection-functions">Reflection Functions</a></h1>
+<h2 id="loadstring"><a class="header" href="#loadstring">Loadstring:</a></h2>
+<pre><code class="language-lua">&lt;function&gt; loadstring(&lt;string&gt; chunk, &lt;string?&gt; chunkName)
+</code></pre>
+<ul>
+<li>Loads <code>chunk</code> as a Lua function with optional <code>chunkName</code> and returns it.</li>
+</ul>
+<h2 id="check-caller"><a class="header" href="#check-caller">Check Caller:</a></h2>
+<pre><code class="language-lua">&lt;bool&gt; checkcaller(&lt;void&gt;)  
+</code></pre>
+<ul>
+<li>Returns <code>true</code> if the current thread was created by Oxygen-U.</li>
+</ul>
+<h2 id="is-lua-closure"><a class="header" href="#is-lua-closure">Is Lua Closure:</a></h2>
+<pre><code class="language-lua">&lt;bool&gt; islclosure(&lt;function&gt; a1)  
+</code></pre>
+<ul>
+<li>Returns <code>true</code> if <code>a1</code> is an LClosure.</li>
+</ul>
+<h2 id="dump-string"><a class="header" href="#dump-string">Dump String:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; dumpstring(&lt;string&gt; script)  
+</code></pre>
+<ul>
+<li>Returns the Oxygen-U formatted bytecode for source string <code>script</code>.</li>
+</ul>
+<h2 id="decompile"><a class="header" href="#decompile">Decompile:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; decompile(&lt;Instance&gt; script)
+</code></pre>
+<ul>
+<li>Decompiles <code>script</code> and returns the decompiled output.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="console-functions"><a class="header" href="#console-functions">Console Functions</a></h1>
+<h2 id="console-print"><a class="header" href="#console-print">Console Print:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; rconsoleprint(&lt;string&gt; text)
+</code></pre>
+<ul>
+<li>Prints <code>text</code> into the console.</li>
+</ul>
+<h2 id="console-info"><a class="header" href="#console-info">Console Info:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; rconsoleinfo(&lt;string&gt; text)
+</code></pre>
+<ul>
+<li>Prints <code>text</code> into the console, with <code>[INFO]</code> written before it.</li>
+</ul>
+<h2 id="console-error"><a class="header" href="#console-error">Console Error:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; rconsoleerr(&lt;string&gt; text)
+</code></pre>
+<ul>
+<li>Prints <code>text</code> into the console, with <code>[ERROR]</code> written before it.</li>
+</ul>
+<h2 id="console-clear"><a class="header" href="#console-clear">Console Clear:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; rconsoleclear(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Clears all text from the console.</li>
+</ul>
+<h2 id="console-name"><a class="header" href="#console-name">Console Name:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; rconsolename(&lt;string&gt; title)
+</code></pre>
+<ul>
+<li>Sets the console's title to <code>title</code>.</li>
+</ul>
+<h2 id="console-input"><a class="header" href="#console-input">Console Input:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; rconsoleinput(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Yields the current thread until the user inputs text and presses <code>Enter</code>. Returns the input they put in.</li>
+</ul>
+<h2 id="console-close"><a class="header" href="#console-close">Console Close:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; rconsoleclose(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Closes the console.</li>
+</ul>
+<h2 id="print-console"><a class="header" href="#print-console">Print Console:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; printconsole(&lt;string&gt; message, &lt;byte&gt; red, &lt;byte&gt; green, &lt;byte&gt; blue)
+</code></pre>
+<ul>
+<li>Prints <code>message</code> into the internal and integrated console with RGB value.</li>
+</ul>
+<h2 id="console-colors"><a class="header" href="#console-colors">Console Colors:</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Name</th><th style="text-align: center">Type</th></tr></thead><tbody>
+<tr><td style="text-align: center">Black</td><td style="text-align: center">@@BLACK@@</td></tr>
+<tr><td style="text-align: center">Blue</td><td style="text-align: center">@@BLUE@@</td></tr>
+<tr><td style="text-align: center">Green</td><td style="text-align: center">@@GREEN@@</td></tr>
+<tr><td style="text-align: center">Cyan</td><td style="text-align: center">@@CYAN@@</td></tr>
+<tr><td style="text-align: center">Red</td><td style="text-align: center">@@RED@@</td></tr>
+<tr><td style="text-align: center">Magenta</td><td style="text-align: center">@@MAGENTA@@</td></tr>
+<tr><td style="text-align: center">Light Gray</td><td style="text-align: center">@@LIGHT_GRAY@@</td></tr>
+<tr><td style="text-align: center">Dark Gray</td><td style="text-align: center">@@DARK_GRAY@@</td></tr>
+<tr><td style="text-align: center">Light Blue</td><td style="text-align: center">@@LIGHT_BLUE@@</td></tr>
+<tr><td style="text-align: center">Light Green</td><td style="text-align: center">@@LIGHT_GREEN@@</td></tr>
+<tr><td style="text-align: center">Light Cyan</td><td style="text-align: center">@@LIGHT_CYAN@@</td></tr>
+<tr><td style="text-align: center">Light Red</td><td style="text-align: center">@@LIGHT_RED@@</td></tr>
+<tr><td style="text-align: center">Light Magenta</td><td style="text-align: center">@@LIGHT_MAGENTA@@</td></tr>
+<tr><td style="text-align: center">Yellow</td><td style="text-align: center">@@YELLOW@@</td></tr>
+<tr><td style="text-align: center">White</td><td style="text-align: center">@@WHITE@@</td></tr>
+</tbody></table>
+</div><p align="center">
+    <img src="https://cdn.discordapp.com/attachments/775967135746621463/922084051194634240/image_1.png">
+</p>
+<h3 id="example"><a class="header" href="#example">Example:</a></h3>
+<pre><code class="language-lua">rconsolename("console") -- Sets the name of the console to 'console'
+rconsoleprint("gamer\n")
+rconsoleprint("@@YELLOW@@") -- Changes the text color to Yellow
+rconsoleprint("gamer but yellow\n")
+rconsoleerr("omg error!")
+rconsolewarn("omg warning!")
+wait(3)
+rconsoleclear() -- Clears all text
+wait(1)
+rconsoleclose() -- Closes the console
+</code></pre>
+<p>You must use <code>\n</code> at the end of <code>rconsoleprint</code> to make a new line.</p>
+<p><code>rconsoleinfo</code>, <code>rconsolewarn</code>, and <code>rconsoleerr</code> do this automatically.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="filesystem-functions"><a class="header" href="#filesystem-functions">Filesystem Functions</a></h1>
+<h2 id="read-file"><a class="header" href="#read-file">Read File:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; readfile(&lt;string&gt; path)
+</code></pre>
+<ul>
+<li>Returns the contents of the file located at <code>path</code>.</li>
+</ul>
+<h2 id="write-file"><a class="header" href="#write-file">Write File:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; writefile(&lt;string&gt; path, &lt;string&gt; content)
+</code></pre>
+<ul>
+<li>Writes <code>content</code> to the supplied <code>path</code>.</li>
+</ul>
+<h2 id="append-file"><a class="header" href="#append-file">Append File:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; appendfile(&lt;string&gt; path, &lt;string&gt; content)
+</code></pre>
+<p>Appends <code>content</code> to the file contents at <code>path</code>.</p>
+<h2 id="load-file"><a class="header" href="#load-file">Load File:</a></h2>
+<pre><code class="language-lua">&lt;function&gt; loadfile(&lt;string&gt; path)
+</code></pre>
+<ul>
+<li>Loads the contents of the file located at <code>path</code> as a Lua function and returns it.</li>
+</ul>
+<h2 id="list-files"><a class="header" href="#list-files">List Files:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; listfiles(&lt;string&gt; folder)
+</code></pre>
+<ul>
+<li>Returns a table of all files in <code>folder</code>.</li>
+</ul>
+<h2 id="is-file"><a class="header" href="#is-file">Is File:</a></h2>
+<pre><code class="language-lua">&lt;bool&gt; isfile(&lt;string&gt; path)
+</code></pre>
+<ul>
+<li>Returns <code>true</code> if <code>path</code> is a file.</li>
+</ul>
+<h2 id="is-folder"><a class="header" href="#is-folder">Is Folder:</a></h2>
+<pre><code class="language-lua">&lt;bool&gt; isfolder(&lt;string&gt; path)
+</code></pre>
+<ul>
+<li>Returns <code>true</code> if <code>path</code> is a folder.</li>
+</ul>
+<h2 id="make-folder"><a class="header" href="#make-folder">Make Folder:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; makefolder(&lt;string&gt; path)
+</code></pre>
+<ul>
+<li>Creates a new folder at <code>path</code>.</li>
+</ul>
+<h2 id="delete-folder"><a class="header" href="#delete-folder">Delete Folder:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; delfolder(&lt;string&gt; path)
+</code></pre>
+<ul>
+<li>Deletes the folder located at <code>path</code>.</li>
+</ul>
+<h2 id="delete-file"><a class="header" href="#delete-file">Delete File:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; delfile(&lt;string&gt; path)
+</code></pre>
+<ul>
+<li>Deletes the file located at <code>path</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="miscellaneous-functions"><a class="header" href="#miscellaneous-functions">Miscellaneous Functions</a></h1>
+<h2 id="set-clipboard"><a class="header" href="#set-clipboard">Set Clipboard:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; setclipboard(&lt;string&gt; content)
+</code></pre>
+<ul>
+<li>Sets <code>content</code> to the clipboard.</li>
+</ul>
+<h2 id="set-fast-flag"><a class="header" href="#set-fast-flag">Set Fast Flag:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; setfflag(&lt;string&gt; flag, &lt;string&gt; value)
+</code></pre>
+<ul>
+<li>Sets <code>flag</code>'s value to <code>value</code>.</li>
+</ul>
+<p>You can find a list of all Fast Flags here: <a href="https://fflag.eryn.io/">FFlag Watcher</a> | <a href="https://raw.githubusercontent.com/MaximumADHD/Roblox-FFlag-Tracker/main/PCDesktopClient.json">FFlag Tracker</a></p>
+<h2 id="get-namecall-method"><a class="header" href="#get-namecall-method">Get Namecall Method:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; getnamecallmethod(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Returns the namecall method if the function is called in an <code>__namecall</code> metatable hook.</li>
+</ul>
+<h2 id="set-namecall-method"><a class="header" href="#set-namecall-method">Set Namecall Method:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; setnamecallmethod(&lt;string&gt; method)
+</code></pre>
+<ul>
+<li>Sets the current namecall method to the new namecall method. Must be called in a <code>__namecall</code> metatable hook.</li>
+</ul>
+<h2 id="identify-executor"><a class="header" href="#identify-executor">Identify Executor:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; identifyexecutor(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Returns <code>Oxygen-U</code> if the current executor is Oxygen-U.</li>
+</ul>
+<h2 id="set-fps-cap"><a class="header" href="#set-fps-cap">Set FPS Cap:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; setfpscap(&lt;uint&gt; cap)
+</code></pre>
+<ul>
+<li>Sets the fps cap to <code>cap</code>.</li>
+</ul>
+<h2 id="save-instance"><a class="header" href="#save-instance">Save Instance:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; saveinstance(&lt;table&gt; a1)  
+</code></pre>
+<ul>
+<li>Saves the current game into your workspace folder. You can use table <code>a1</code> to customize options for this.</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Option</th><th style="text-align: center">Value</th></tr></thead><tbody>
+<tr><td style="text-align: center">mode</td><td style="text-align: center">optikmized / full / scripts</td></tr>
+<tr><td style="text-align: center">noscripts</td><td style="text-align: center">true / false</td></tr>
+<tr><td style="text-align: center">scriptcache</td><td style="text-align: center">true / false</td></tr>
+<tr><td style="text-align: center">timeout</td><td style="text-align: center">any number</td></tr>
+</tbody></table>
+</div>
+<h2 id="message-box"><a class="header" href="#message-box">Message Box:</a></h2>
+<pre><code class="language-lua">&lt;uint&gt; messagebox(&lt;string&gt; text, &lt;string&gt; title, &lt;uint&gt; flag)
+</code></pre>
+<ul>
+<li>Creates a message box.</li>
+</ul>
+<h3 id="flags"><a class="header" href="#flags">Flags:</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Flag</th><th style="text-align: center">Value</th></tr></thead><tbody>
+<tr><td style="text-align: center">OK</td><td style="text-align: center">0</td></tr>
+<tr><td style="text-align: center">OK / Cancel</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center">Abort / Retry / Ignore</td><td style="text-align: center">2</td></tr>
+<tr><td style="text-align: center">Yes / No / Cancel</td><td style="text-align: center">3</td></tr>
+<tr><td style="text-align: center">Yes / No</td><td style="text-align: center">4</td></tr>
+<tr><td style="text-align: center">Retry / Cancel</td><td style="text-align: center">5</td></tr>
+<tr><td style="text-align: center">Cancel / Try Again / Continue</td><td style="text-align: center">6</td></tr>
+</tbody></table>
+</div>
+<h3 id="return-values"><a class="header" href="#return-values">Return Values:</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Value</th><th style="text-align: center">Description</th></tr></thead><tbody>
+<tr><td style="text-align: center">1</td><td style="text-align: center">OK was clicked.</td></tr>
+<tr><td style="text-align: center">2</td><td style="text-align: center">Cancel was clicked.</td></tr>
+<tr><td style="text-align: center">3</td><td style="text-align: center">Abort was clicked.</td></tr>
+<tr><td style="text-align: center">4</td><td style="text-align: center">Retry was clicked.</td></tr>
+<tr><td style="text-align: center">5</td><td style="text-align: center">Ignore was clicked</td></tr>
+<tr><td style="text-align: center">6</td><td style="text-align: center">Yes was clicked.</td></tr>
+<tr><td style="text-align: center">7</td><td style="text-align: center">No was clicked.</td></tr>
+<tr><td style="text-align: center">10</td><td style="text-align: center">Try Again was clicked.</td></tr>
+<tr><td style="text-align: center">11</td><td style="text-align: center">Continue was clicked.</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="libraries"><a class="header" href="#libraries">Libraries</a></h1>
+<p>Oxygen-U has a wide variety of libraries to choose from!</p>
+<ul>
+<li>Let's start with the <a href="./Libraries/BitLib.html">Bit32 Library</a>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bit32-library"><a class="header" href="#bit32-library">Bit32 Library</a></h1>
+<h2 id="bit-divide"><a class="header" href="#bit-divide">Bit Divide:</a></h2>
+<pre><code class="language-lua">&lt;int&gt; bit.bdiv(&lt;uint&gt; dividend, &lt;uint&gt; divisor)  
+</code></pre>
+<ul>
+<li>Divides <code>dividend</code> by <code>divisor</code>, remainder is not returned.</li>
+</ul>
+<h2 id="bit-add"><a class="header" href="#bit-add">Bit Add:</a></h2>
+<pre><code class="language-lua">&lt;int&gt; bit.badd(&lt;uint&gt; a, &lt;uint&gt; b)  
+</code></pre>
+<ul>
+<li>Adds <code>a</code> with <code>b</code>, allows overflows.</li>
+</ul>
+<h2 id="bit-subtract"><a class="header" href="#bit-subtract">Bit Subtract:</a></h2>
+<pre><code class="language-lua">&lt;int&gt; bit.bsub(&lt;uint&gt; a, &lt;uint&gt; b)  
+</code></pre>
+<ul>
+<li>Subtracts <code>a</code> with <code>b</code>, allows overflows.</li>
+</ul>
+<h2 id="bit-multiply"><a class="header" href="#bit-multiply">Bit Multiply:</a></h2>
+<pre><code class="language-lua">&lt;int&gt; bit.bmul(&lt;uint&gt; a, &lt;uint&gt; b)  
+</code></pre>
+<ul>
+<li>Multiplies <code>a</code> using <code>b</code>, allows overflows.</li>
+</ul>
+<h2 id="bit-and"><a class="header" href="#bit-and">Bit And:</a></h2>
+<pre><code class="language-lua">&lt;int&gt; bit.band(&lt;uint&gt; x, &lt;uint&gt; disp)
+</code></pre>
+<ul>
+<li>Returns the bitwise <em>and</em> of its operands.</li>
+</ul>
+<h2 id="bit-or"><a class="header" href="#bit-or">Bit Or:</a></h2>
+<pre><code class="language-lua">&lt;int&gt; bit.bor(&lt;uint&gt; x, &lt;uint&gt; disp)
+</code></pre>
+<ul>
+<li>Returns the bitwise <em>or</em> of its operands.</li>
+</ul>
+<h2 id="bit-xor"><a class="header" href="#bit-xor">Bit Xor:</a></h2>
+<pre><code class="language-lua">&lt;int&gt; bit.bxor(&lt;uint&gt; x, &lt;uint&gt; disp)
+</code></pre>
+<ul>
+<li>Returns the bitwise <em>exclusive</em> or of its operands.</li>
+</ul>
+<h2 id="bit-not"><a class="header" href="#bit-not">Bit Not:</a></h2>
+<pre><code class="language-lua">&lt;int&gt; bit.bnot(&lt;uint&gt; x)
+</code></pre>
+<ul>
+<li>Returns the bitwise negation of <code>x</code>.</li>
+</ul>
+<h2 id="to-hex"><a class="header" href="#to-hex">To Hex:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; bit.tohex(&lt;uint&gt; val)  
+</code></pre>
+<ul>
+<li>Returns <code>val</code> to a hex string.</li>
+</ul>
+<h2 id="to-bit"><a class="header" href="#to-bit">To Bit:</a></h2>
+<pre><code class="language-lua">&lt;int&gt; bit.tobit(&lt;uint&gt; val)  
+</code></pre>
+<ul>
+<li>Returns <code>val</code> into proper form for bitwise operations.</li>
+</ul>
+<h2 id="left-shift"><a class="header" href="#left-shift">Left Shift:</a></h2>
+<pre><code class="language-lua">&lt;int&gt; bit.lshift(&lt;uint&gt; x, &lt;uint&gt; disp)
+</code></pre>
+<ul>
+<li>Returns the number <code>x</code> shifted <code>disp</code> bits to the left.</li>
+</ul>
+<h2 id="right-shift"><a class="header" href="#right-shift">Right Shift:</a></h2>
+<pre><code class="language-lua">&lt;int&gt; bit.rshift(&lt;uint&gt; x, &lt;uint&gt; disp)
+</code></pre>
+<ul>
+<li>Returns the number <code>x</code> shifted <code>disp</code> bits to the left.</li>
+</ul>
+<h2 id="arithmetic-shift"><a class="header" href="#arithmetic-shift">Arithmetic Shift:</a></h2>
+<pre><code class="language-lua">&lt;int&gt; bit.arshift(&lt;int&gt; x, &lt;int&gt; disp)
+</code></pre>
+<ul>
+<li>
+<p>Returns the number <code>x</code> shifted <code>disp</code> bits to the right. The number <code>disp</code> may be any representable integer. Negative displacements shift to the left.</p>
+<ul>
+<li>This shift operation is what is called an arithmetic shift. Vacant bits on the left are filled with copies of the higher bit of <code>x</code>; vacant bits on the right are filled with zeros. In particular, displacements with absolute values higher than 31 result in zero or <code>0xFFFFFFFF</code> (all original bits are shifted out).</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="crypt-library"><a class="header" href="#crypt-library">Crypt Library</a></h1>
+<h2 id="encrypt"><a class="header" href="#encrypt">Encrypt:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; crypt.encrypt(&lt;string&gt; data, &lt;string&gt; key)  
+</code></pre>
+<ul>
+<li>Encrypts <code>data</code> with <code>key</code>.</li>
+</ul>
+<h2 id="decrypt"><a class="header" href="#decrypt">Decrypt:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; crypt.decrypt(&lt;string&gt; data, &lt;string&gt; key)  
+</code></pre>
+<ul>
+<li>Decrypts <code>data</code> with <code>key</code>.</li>
+</ul>
+<h2 id="base64-encode"><a class="header" href="#base64-encode">Base64 Encode:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; crypt.base64.encode(&lt;string&gt; data)  
+</code></pre>
+<ul>
+<li>Encodes <code>data</code> with base64.</li>
+</ul>
+<h2 id="base64-decode"><a class="header" href="#base64-decode">Base64 Decode:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; crypt.base64.decode(&lt;string&gt; data)  
+</code></pre>
+<ul>
+<li>Decodes <code>data</code> with base64.</li>
+</ul>
+<h2 id="hash"><a class="header" href="#hash">Hash:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; crypt.hash(&lt;string&gt; data)
+</code></pre>
+<ul>
+<li>Hashes <code>data</code> with SHA-384.</li>
+</ul>
+<h2 id="derive"><a class="header" href="#derive">Derive:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; crypt.derive(&lt;string&gt; value, &lt;uint&gt; length)
+</code></pre>
+<ul>
+<li>Derives a secret key from <code>value</code> with the length of <code>length</code>.</li>
+</ul>
+<h2 id="random"><a class="header" href="#random">Random:</a></h2>
+<pre><code class="language-lua">&lt;string&gt; crypt.random(&lt;uint&gt; size)
+</code></pre>
+<ul>
+<li>Generates a random string with <code>size</code> (cannot be negative or exceed 1024).</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="debug-library"><a class="header" href="#debug-library">Debug Library</a></h1>
+<h2 id="get-constants"><a class="header" href="#get-constants">Get Constants:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; debug.getconstants(&lt;function&gt; f)
+</code></pre>
+<ul>
+<li>Returns the constants in function <code>f</code> or at level <code>f</code>.</li>
+</ul>
+<h2 id="get-constant"><a class="header" href="#get-constant">Get Constant:</a></h2>
+<pre><code class="language-lua">&lt;variant&gt; debug.getconstant(&lt;function&gt; f, &lt;int&gt; idx)
+</code></pre>
+<ul>
+<li>Returns the constant at index <code>idx</code> in function <code>f</code> or level <code>f</code>.</li>
+</ul>
+<h2 id="set-constant"><a class="header" href="#set-constant">Set Constant:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; debug.setconstant(&lt;function&gt; f, &lt;int&gt; idx, union&lt;number, bool, string&gt; value)
+</code></pre>
+<ul>
+<li>Set constant <code>idx</code> to tuple <code>value</code> at level or function <code>f</code>.</li>
+</ul>
+<h2 id="get-upvalues"><a class="header" href="#get-upvalues">Get Upvalues:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; debug.getupvalues(&lt;function&gt; f)
+</code></pre>
+<ul>
+<li>Retrieve the upvalues in function <code>f</code> or at level <code>f</code>.</li>
+</ul>
+<h2 id="get-upvalue"><a class="header" href="#get-upvalue">Get Upvalue:</a></h2>
+<pre><code class="language-lua">&lt;variant&gt; debug.getupvalue(union&lt;function, number&gt; f, &lt;number&gt; idx)
+</code></pre>
+<ul>
+<li>Returns the upvalue with name <code>idx</code> in function or level <code>f</code>.</li>
+</ul>
+<h2 id="set-upvalue"><a class="header" href="#set-upvalue">Set Upvalue:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; debug.setupvalue(&lt;function&gt; f, &lt;int&gt; idx, &lt;table&gt; value)
+</code></pre>
+<ul>
+<li>Set upvalue <code>idx</code> to <code>value</code> at level or function <code>f</code>.</li>
+</ul>
+<h2 id="get-proto"><a class="header" href="#get-proto">Get Proto:</a></h2>
+<pre><code class="language-lua">&lt;table, function&gt; debug.getproto(&lt;function&gt; f, &lt;int&gt; idx, &lt;bool?&gt; activated)
+</code></pre>
+<ul>
+<li>Gets the inner <code>function</code> of <code>f</code> at <code>index</code>.</li>
+</ul>
+<h2 id="set-proto"><a class="header" href="#set-proto">Set Proto:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; debug.setproto(&lt;function&gt; fi, &lt;number&gt; index, &lt;function&gt; replacement)
+</code></pre>
+<ul>
+<li>Replaces <code>fi</code> at <code>index</code> with function <code>replacement</code> at level or function <code>fi</code>.</li>
+</ul>
+<h2 id="get-stack"><a class="header" href="#get-stack">Get Stack:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; debug.getstack(&lt;function&gt; f, &lt;int&gt; idx)
+</code></pre>
+<ul>
+<li>Gets the method stack at level or function <code>f</code>.</li>
+</ul>
+<h2 id="set-stack"><a class="header" href="#set-stack">Set Stack:</a></h2>
+<pre><code class="language-lua">&lt;void&gt; debug.setstack(&lt;function&gt; f, &lt;int&gt; idx, &lt;table&gt; value)
+</code></pre>
+<ul>
+<li>Sets the stack indice at <code>indice</code> to <code>value</code> at level or function <code>f</code>.</li>
+</ul>
+<h2 id="set-metatable"><a class="header" href="#set-metatable">Set Metatable:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; debug.setmetatable(&lt;table&gt; o, &lt;table&gt; mt)  
+</code></pre>
+<ul>
+<li>Set the metatable of <code>o</code> to <code>mt</code>.</li>
+</ul>
+<h2 id="get-registry-1"><a class="header" href="#get-registry-1">Get Registry:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; debug.getregistry(&lt;void&gt;)
+</code></pre>
+<ul>
+<li>Returns the Lua registry.</li>
+</ul>
+<h2 id="get-info"><a class="header" href="#get-info">Get Info:</a></h2>
+<pre><code class="language-lua">&lt;table&gt; debug.getinfo(&lt;function&gt; f)
+</code></pre>
+<ul>
+<li>Returns a table of information about function <code>f</code>.</li>
+</ul>
+<h3 id="info"><a class="header" href="#info">Info:</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Name</th><th style="text-align: center">Type</th><th style="text-align: center">Description</th></tr></thead><tbody>
+<tr><td style="text-align: center">name</td><td style="text-align: center">String</td><td style="text-align: center">The name of the function.</td></tr>
+<tr><td style="text-align: center">short_src</td><td style="text-align: center">String</td><td style="text-align: center">A shorter version of source.</td></tr>
+<tr><td style="text-align: center">what</td><td style="text-align: center">String</td><td style="text-align: center">What the function is: Lua = Lua function - C = C function</td></tr>
+<tr><td style="text-align: center">currentline</td><td style="text-align: center">Integer</td><td style="text-align: center">The line that is currently active.</td></tr>
+<tr><td style="text-align: center">nups</td><td style="text-align: center">Integer</td><td style="text-align: center">The number of upvalues that the function has.</td></tr>
+<tr><td style="text-align: center">func</td><td style="text-align: center">Function</td><td style="text-align: center">The function that is active.</td></tr>
+<tr><td style="text-align: center">source</td><td style="text-align: center">String</td><td style="text-align: center">Where the function was defined.</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="drawing-library"><a class="header" href="#drawing-library">Drawing Library</a></h1>
+<h2 id="drawingnew"><a class="header" href="#drawingnew">Drawing.New:</a></h2>
+<pre><code class="language-lua">&lt;object&gt; Drawing.new(&lt;string&gt; type)
+</code></pre>
+<ul>
+<li>Creates a new drawing object with <code>type</code>. Returns the object.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="credentials"><a class="header" href="#credentials">Credentials</a></h1>
+<p><code>bruvzz</code> - Oxygen-U Documentation</p>
+<p><code>Oxygen-U Team</code> - Making Oxygen-U possible! :D</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>
